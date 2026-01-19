@@ -1,0 +1,51 @@
+.claude/commands/openspec/apply.md
+.claude/commands/openspec/archive.md
+.claude/commands/openspec/proposal.md
+AGENTS.md
+CLAUDE.md
+openspec/AGENTS.md
+openspec/project.md
+
+# .NET
+backend/**/bin/
+backend/**/obj/
+backend/**/*.user
+backend/**/*.userosscache
+backend/**/*.suo
+backend/**/.vs/
+*.nupkg
+*.snupkg
+
+# Angular / Node
+frontend/node_modules/
+frontend/dist/
+frontend/.angular/
+frontend/.vscode/*
+!frontend/.vscode/extensions.json
+frontend/*.tgz
+frontend/.editorconfig
+
+# IDE
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+openspec/changes/add-todo-app/design.md
+openspec/changes/add-todo-app/proposal.md
+openspec/changes/add-todo-app/specs/todo-management/spec.md
+openspec/changes/add-todo-app/tasks.md
+angular-notes.md
+frontend/src/app/components/todo-form/todo-form.component.spec.ts
+frontend/src/app/components/todo-item/todo-item.component.spec.ts
+frontend/src/app/components/todo-list/todo-list.component.spec.ts
+openspec/changes/add-authentication/design.md
+openspec/changes/add-authentication/proposal.md
+openspec/changes/add-authentication/specs/backend-authentication/spec.md
+openspec/changes/add-authentication/specs/frontend-authentication/spec.md
+openspec/changes/add-authentication/specs/user-specific-todos/spec.md
+openspec/changes/add-authentication/tasks.md
+PREP.md
+TaskCompleted.md
