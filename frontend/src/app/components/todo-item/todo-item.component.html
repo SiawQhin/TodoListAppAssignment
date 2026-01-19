@@ -1,0 +1,40 @@
+<div class="todo-item">
+  @if (!isEditing()) {
+    <!-- Display Mode -->
+    <div class="todo-content">
+      <input
+        type="checkbox"
+        [checked]="todo().isCompleted"
+        (change)="onToggleComplete()"
+        class="todo-checkbox"
+      />
+      <span
+        [class.completed]="todo().isCompleted"
+        class="todo-title"
+        (dblclick)="startEditing()"
+      >
+        {{ todo().title }}
+      </span>
+    </div>
+    <div class="todo-actions">
+      <button (click)="startEditing()" class="edit-button">Edit</button>
+      <button (click)="onDelete()" class="delete-button">Delete</button>
+    </div>
+  } @else {
+    <!-- Edit Mode -->
+    <div class="todo-content edit-mode">
+      <input
+        type="text"
+        [(ngModel)]="editedTitle"
+        class="edit-input"
+        name="editedTitle"
+        (keyup.enter)="saveEdit()"
+        (keyup.escape)="cancelEditing()"
+      />
+    </div>
+    <div class="todo-actions">
+      <button (click)="saveEdit()" class="save-button">Save</button>
+      <button (click)="cancelEditing()" class="cancel-button">Cancel</button>
+    </div>
+  }
+</div>

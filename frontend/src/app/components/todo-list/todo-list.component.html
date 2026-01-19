@@ -1,0 +1,42 @@
+<div class="todo-list-container">
+  <header class="header">
+    <h1 class="title">My Todo List</h1>
+    <div class="user-info">
+      @if (userEmail()) {
+        <span class="user-email">{{ userEmail() }}</span>
+      }
+      <button class="logout-btn" (click)="onLogout()">Logout</button>
+    </div>
+  </header>
+
+  <app-todo-form (todoAdded)="onTodoAdded($event)" />
+
+  @if (error()) {
+    <div class="error-message">
+      {{ error() }}
+    </div>
+  }
+
+  @if (isLoading()) {
+    <div class="loading">Loading todos...</div>
+  } @else {
+    @if (todos().length === 0) {
+      <div class="empty-state">
+        <p class="empty-icon">📝</p>
+        <p class="empty-text">No todos yet!</p>
+        <p class="empty-subtext">Add your first todo above to get started.</p>
+      </div>
+    } @else {
+      <div class="todo-list">
+        @for (todo of todos(); track todo.id) {
+          <app-todo-item
+            [todo]="todo"
+            (toggleComplete)="onToggleComplete($event)"
+            (deleteTodo)="onDeleteTodo($event)"
+            (updateTodo)="onUpdateTodo($event)"
+          />
+        }
+      </div>
+    }
+  }
+</div>
